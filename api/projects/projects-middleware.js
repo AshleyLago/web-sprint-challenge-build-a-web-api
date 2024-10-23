@@ -25,7 +25,6 @@ function validateProject(req, res, next) {
     }
 }
 
-
 module.exports = {
     validateProjId,
     validateProject
