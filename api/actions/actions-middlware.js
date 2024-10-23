@@ -17,10 +17,9 @@ async function validateActId(req, res, next) {
 
 function validateAction(req, res, next) {
     const { project_id, description, notes } = req.body
-    if ( !project_id || !project_id.trim() || !description || !description.trim() || !notes || !notes.trim()) {
+    if ( !project_id || !description || !description.trim() || !notes || !notes.trim()) {
         next({ status:400, message: "missing project id, description, and/or notes"})
     } else {
-        req.project_id = project_id.trim()
         req.description = description.trim()
         req.notes = notes.trim()
         next()
